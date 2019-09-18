@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Rat(namerat, massrat, speed, status, behaviorrat) {
+        this.namerat = namerat;
+        this.weightrat = massrat;
+        this.getWeight = function () {
+            return this.weightrat;
+        };
+        this.speed = speed;
+        this.status = status;
+        this.behaviorrat = behaviorrat;
+        this.getSpeed = function () {
+            return this.speed
+        };
+        this.getRat = function () {
+            return this.namerat + this.getWeight() + this.speed + this.status + this.behaviorrat;
+        }
+    }
+
+    function Cat(namecat, masscat, maxspeed, behaviorcat) {
+        this.namecat = namecat;
+        this.weightcat = masscat;
+        this.maxspeed = maxspeed;
+        this.behaviorcat = behaviorcat;
+        this.getMaxspeed = function () {
+            return this.maxspeed;
+        };
+        this.getCat = function () {
+            return this.namecat + this.weightcat + this.maxspeed + this.behaviorcat
+        };
+        this.batchuot = function (rat) {
+            return (this.maxspeed > rat.speed);
+        };
+        this.thitchuot = function (rat) {
+            if (rat.status) {
+                this.weightcat += rat.getWeight();
+            }
+        };
+        this.chuotchet = function (rat) {
+            if (this.batchuot= true){
+                return this.status= false
+            }
+        }
+    }
+
+
+    let rat = new Rat("Jen", 0.7, 1.2, true, "chít chít");
+    let cat = new Cat("Tom", 3.4, 1.9, "meo meo");
+
+    // let chuot = rat.getRat();
+    // let meo = cat.getCat();
+    // let speedChuot = rat.getSpeed();
+    // let speedMeo = cat.getMaxspeed();
+    // alert(chuot);
+    // alert(meo);
+    // alert("Tom @$%#%^$^#%^^$#$ Jen");
+
+    // function ratCat(speedChuot, speedMeo) {
+    //     if (speedChuot < speedMeo) {
+    //         alert("Jen chết");
+    //         alert("Khối lượng của Tom tăng lên 0.7")
+    //         // function CatNew(namecatUp, masscatUp, maxspeedUp, behaviorcatUp) {
+    //         //     this.namecatUp = namecatUp;
+    //         //     this.masscatUp = masscatUp;
+    //         //     this.maxspeedUp = maxspeedUp;
+    //         //     this.behaviorcatUp = behaviorcatUp;
+    //         // }
+    //         //
+    //         // this.getCatNew = function () {
+    //         //     return "Mèo: " + this.namecatUp + ", Khối lượng: " + this.masscatUp + 0.7 + ", Tốc độ tối đa: " + this.maxspeedUp + ", " + this.behaviorcatUp
+    //         // };
+    //         // let catnew = new CatNew("Tom", 3.4, 1.9, "meo meo");
+    //         // let catNeww = catnew.getCatNew();
+    //         // alert(catNeww)
+    //     } else {
+    //         alert("Jen thoát. Mew mew")
+    //     }
+    // }
+    //
+    // ratCat(speedChuot, speedMeo);
+
+</script>
+</body>
+</html>
