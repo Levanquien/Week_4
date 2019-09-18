@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    Số điện thoại hợp lệ cần đạt theo mẫu sau: (xx)-(0xxxxxxxxx)-->
+</head>
+<body>
+<script>
+    function validate_mobile_number(str) {
+        regexp = /^\(\d{2}\)-\([0]\d{9}\)$/;
+
+        if(regexp.test(str)){
+            return true
+        } else {
+            return false
+        }
+    }
+</script>
+</body>
+</html>
