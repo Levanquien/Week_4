@@ -7,29 +7,39 @@
 <body>
 <script>
     let Remote = function (id) {
-        this.id =id;
-        this.moveChannel = function (tv,channels) {
+        this.id = id;
+        this.moveChannel = function (tv, channels) {
             tv.changeChanel(channels);
-        }
-        this.moveVolume = function (tv,volume) {
+        };
+        this.moveVolume = function (tv, volume) {
             tv.channgevolum(volume);
         }
-    }
-    let TiVi =function (channels,volume,status) {
-        this.channels =channels;
+        this.moveOnOff = function (tv) {
+            tv.onOff()
+        }
+    };
+    let TiVi = function (channels, volume, status) {
+        this.channels = channels;
         this.volume = volume;
-        this.status =status;
-        this.changeChanel =function(newchannel) {
-            this.channels = newchannel;
+        this.status = status;
+
+        this.onOff = function () {
+            this.status = !this.status
+        };
+        this.changeChanel = function (newchannel) {
+            if (this.status) {
+                this.channels = newchannel;
+            }
+        };
+        this.channgevolum = function (newVolum) {
+            if (this.status) {
+                this.volume = newVolum;
+            }
         }
-        this.channgevolum =function (newVolum) {
-            this.volume = newVolum;
-        }
-    }
-    let tiviSamsung1 = new TiVi(1,3,true);
-    let tiviSamsung2 = new TiVi(1,3,true);
+    };
+    let tiviSamsung1 = new TiVi(1, 3, true);
+    let tiviSamsung2 = new TiVi(1, 3, false);
     let remot1 = new Remote(1);
-    remot1.moveChannel(tiviSamsung1,7);
 </script>
 </body>
 </html>
