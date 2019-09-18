@@ -9,12 +9,13 @@
     function Rat(namerat, massrat, speed, status, behaviorrat) {
         this.namerat = namerat;
         this.weightrat = massrat;
-        this.getWeight = function () {
-            return this.weightrat;
-        };
         this.speed = speed;
         this.status = status;
         this.behaviorrat = behaviorrat;
+
+        this.getWeight = function () {
+            return this.weightrat;
+        };
         this.getSpeed = function () {
             return this.speed
         };
@@ -40,18 +41,16 @@
         this.thitchuot = function (rat) {
             if (rat.status) {
                 this.weightcat += rat.getWeight();
+                rat.status = false
             }
+            rat.status = true
         };
-        this.chuotchet = function (rat) {
-            if (this.batchuot= true){
-                return this.status= false
-            }
-        }
     }
 
 
-    let rat = new Rat("Jen", 0.7, 1.2, true, "chít chít");
-    let cat = new Cat("Tom", 3.4, 1.9, "meo meo");
+    let jen = new Rat("Jen", 0.7, 1.2, true, "chít chít");
+    let jenny = new Rat("Jenny", 1.4, 2.4, true, "mèo mèo");
+    let tom = new Cat("Tom", 3.4, 1.9, "meo meo");
 
     // let chuot = rat.getRat();
     // let meo = cat.getCat();

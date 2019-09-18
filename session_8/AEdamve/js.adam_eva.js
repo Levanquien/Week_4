@@ -15,9 +15,18 @@ function Human(name, gender, weight) {
     this.name = name;
     this.gender = gender;
     this.weight = weight;
+
+    this.spaek = function () {
+        return "Hello!! My name: " + this.name +", My gender: "+ this.gender+ ", My weight: " + this.weight
+    };
     
-    this.iea = function (apple) {
-        
+    this.ieaApple = function (apple) {
+        if (apple.weight>0){
+            apple.decrease();
+            this.weight++;
+            return ;
+        }
+        return "Hết táo"
     }
     }
 
