@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<button onclick="random()">Xúc xắc</button>
+<p>Số ngẫu nhiên từ 0 - 10: <span id="number"></span></p>
+<p>Số ngẫu nhiên từ 0 - 400: <span id="number3"></span></p>
+<p>Số ngẫu nhiên từ 50 - 100: <span id="number2"></span></p>
+
+
+<body>
+<script>
+    function random() {
+        var n = Math.floor(Math.random() * 11);Math.
+        var n1 = Math.floor(Math.random() * 401);
+        var n2 = Math.floor((Math.random() *51)+50);
+        document.getElementById("number").innerHTML = n;
+        document.getElementById("number3").innerHTML = n1;
+        document.getElementById("number2").innerHTML = n2
+    }
+</script>
+</body>
+</html>
